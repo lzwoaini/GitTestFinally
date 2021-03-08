@@ -23,4 +23,8 @@ public class MyViewModel extends ViewModel {
     public void add(int n) {
         number.setValue(number.getValue() + n);
     }
+
+    public void reset() {
+        number.setValue(0);
+    }
 }
