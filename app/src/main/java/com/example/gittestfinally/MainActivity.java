@@ -10,7 +10,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-    private Button buttonSub,buttonAdd;
+    private Button buttonSub,buttonAdd,buttonReset;
     private TextView textView;
     private MyViewModel myViewModel;
     @Override
@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
         textView = findViewById(R.id.textView2);
         buttonSub = findViewById(R.id.button3);
         buttonAdd = findViewById(R.id.button4);
+        buttonReset = findViewById(R.id.button);
         myViewModel.getNumber().observe(this, new Observer<Integer>() {
             @Override
             public void onChanged(Integer integer) {
@@ -37,6 +38,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 myViewModel.add(1);
+            }
+        });
+        buttonReset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                myViewModel.reset();
             }
         });
     }
