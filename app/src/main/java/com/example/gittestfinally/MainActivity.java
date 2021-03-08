@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         buttonReset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                myViewModel.add(-myViewModel.getNumber().getValue());
+                myViewModel.reset();
             }
         });
     }
